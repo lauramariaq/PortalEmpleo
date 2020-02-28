@@ -22,7 +22,7 @@ namespace Tarea4.Controllers
             {
                 string nombreFoto = pic.FileName;
                 pic.SaveAs(Server.MapPath("/image/ " + nombreFoto));
-                ViewBag.Picture = nombreFoto;
+                ViewBag.picture = nombreFoto;
 
                 string nombreCurriculum = curriculum.FileName;
                 curriculum.SaveAs(Server.MapPath("/pdf/" + nombreCurriculum));
