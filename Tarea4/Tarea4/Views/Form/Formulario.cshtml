@@ -1,0 +1,52 @@
+﻿@model Tarea4.Models.Datos
+@using Tarea4.Models;
+@{
+    ViewBag.Title = "Formulario";
+}
+
+<h2>Formulario</h2>
+
+
+@using (Html.BeginForm("Resultados", "Tarea4", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.LabelFor(b => b.Cedula)
+    @Html.TextBoxFor(z => z.Cedula, "", new { @class = "form-control", placeholder = "Inserte su cedula" })
+    @Html.ValidationMessageFor(c => c.Cedula, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(b => b.Nombre)
+    @Html.TextBoxFor(a => a.Nombre, new { @class = "form-control", placeholder = "Inserte el nombre" })
+    @Html.ValidationMessageFor(c => c.Nombre, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(b => b.Apellido)
+    @Html.TextBoxFor(a => a.Apellido, new { @class = "form-control", placeholder = "Inserte el apellido" })
+    @Html.ValidationMessageFor(c => c.Apellido, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(b => b.Edad)
+    @Html.TextBoxFor(a => a.Edad, new { @class = "form-control", placeholder = "Inserte la edad" })
+    @Html.ValidationMessageFor(c => c.Edad, "", new { @class = "text-danger" })
+    <br />
+    @Html.LabelFor(b => b.Telefono)
+    @Html.TextBoxFor(a => a.Telefono, new { @class = "form-control", placeholder = "Inserte el telefono" })
+    <br />
+    @Html.LabelFor(b => b.Email)
+    @Html.TextBoxFor(a => a.Email, new { @class = "form-control", placeholder = "Inserte el correo" })
+    @Html.ValidationMessageFor(c => c.Email, "", new { @class = "text-danger" })
+    <br />
+    @Html.DropDownListFor(a => a.Genero, new SelectList(Enum.GetValues(typeof(genero))), "Selecciona el genero")
+    <br />
+    @Html.DropDownListFor(z => z.Puesto, new SelectList(Enum.GetValues(typeof(puesto))), "Seleccione el puesto al que aspira")
+    <br />
+    @Html.Label("Foto")
+    <input type="file" name="pic" />
+    <br />
+    @Html.Label("Curriculum")
+    <input type="file" name="curriculum" />
+    <br />
+
+
+    <input type="submit" value="Enviar" />
+}
+
+
+
+
